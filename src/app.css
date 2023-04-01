@@ -1,0 +1,118 @@
+:root {
+  --grenn: #14c38e;
+  --bg-green: #00ffab;
+  --silver: #dadada;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--bg-green);
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 400px;
+  padding: 28px 25px;
+  border-radius: 7px;
+  background-color: white;
+}
+
+header {
+  color: var(--grenn);
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.keyword {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--silver);
+  outline: none;
+  padding: 0 30px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.keyword:focus {
+  border: 2px solid var(--grenn);
+}
+
+.keyword:focus ~ .fa-search {
+  color: var(--grenn);
+}
+
+.keyword:valid ~ .fa-times {
+  display: block;
+}
+
+.input-field {
+  margin: 10px 0;
+  position: relative;
+}
+
+.input-field :where(span) {
+  position: absolute;
+  color: var(--silver);
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input-field span.fa-times {
+  right: 20px;
+  display: none;
+}
+
+.fa-search {
+  left: 10px;
+}
+
+ul li {
+  list-style-type: none;
+  margin-top: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--silver);
+}
+ul {
+  display: none;
+  clip-path: inset(0 0 100% 0);
+}
+ul.active {
+  display: block;
+  transition: 3s ease;
+  clip-path: inset(0 0 0 0);
+}
+
+ul li:hover {
+  background-color: #f7f7f7;
+}
+ul li:first-child {
+  margin-top: 20px;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li .text {
+  font-size: 20px;
+}
+
+ul li .meaning {
+  color: #414141;
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+}
